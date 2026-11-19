@@ -1,34 +1,5 @@
-document.documentElement.classList.remove('no-js');
-
-// Mobile menu
-const header = document.querySelector('.site-header');
-const menuBtn = document.querySelector('.menu-btn');
-if (menuBtn) {
-  menuBtn.addEventListener('click', () => {
-    const open = document.body.classList.toggle('menu-open');
-    menuBtn.setAttribute('aria-expanded', open);
-  });
-  document.querySelectorAll('.nav a').forEach(a => a.addEventListener('click', () => {
-    document.body.classList.remove('menu-open');
-    menuBtn.setAttribute('aria-expanded', 'false');
-  }));
-}
-
-// Header border on scroll
-const onScroll = () => header && header.classList.toggle('scrolled', window.scrollY > 8);
-onScroll();
-window.addEventListener('scroll', onScroll, { passive: true });
-
-// Reveal on scroll
-const items = document.querySelectorAll('.reveal');
-if ('IntersectionObserver' in window) {
-  const io = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
-    });
-  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-  items.forEach(el => io.observe(el));
-} else {
-  items.forEach(el => el.classList.add('in'));
-}
-
+(function(){document.documentElement.classList.add('js');
+var b=document.querySelector('.menu');if(b){b.addEventListener('click',function(){var o=document.body.classList.toggle('open');b.setAttribute('aria-expanded',o);});
+document.querySelectorAll('.nav a').forEach(function(a){a.addEventListener('click',function(){document.body.classList.remove('open');b.setAttribute('aria-expanded','false');});});}
+var h=document.querySelector('header');addEventListener('scroll',function(){h&&h.classList.toggle('scrolled',scrollY>8);},{passive:true});
+var els=document.querySelectorAll('.rv');if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});els.forEach(function(e){io.observe(e);});}else els.forEach(function(e){e.classList.add('in');});})();
