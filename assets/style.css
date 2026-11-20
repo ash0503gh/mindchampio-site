@@ -88,6 +88,26 @@ footer{padding:64px 0 40px}.ft{display:flex;justify-content:space-between;align-
 .nav a[aria-current="page"]{background:var(--lav)}
 .label,.pill{align-self:flex-start;width:max-content;max-width:100%}
 .more{display:inline-flex;align-items:center;gap:8px;font-weight:700;margin-top:22px}.more svg{width:16px;height:16px}
+[id]{scroll-margin-top:110px}
+.split2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:860px){.split2{grid-template-columns:1fr}}
+.prose h2{font-size:clamp(1.9rem,3.6vw,2.8rem)}.prose h3{font-size:clamp(1.5rem,2.6vw,2rem)}.prose p{color:var(--muted);margin:14px 0 0}
+.big{font:700 clamp(4rem,9vw,7rem)/.9 "Bricolage Grotesque",sans-serif;letter-spacing:-.05em;color:var(--orange);margin:18px 0 6px}
+.skills{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+.skills .tile{min-height:230px;display:flex;flex-direction:column;justify-content:space-between;padding:24px}
+.skills h3{font-size:21px;margin-top:28px}.skills p{margin:8px 0 0;color:var(--muted);font-size:15px;line-height:1.5}
+.lav{background:var(--lav)}
+@media(max-width:1060px){.skills{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:700px){.skills{grid-template-columns:1fr 1fr}.skills .tile{min-height:0}}
+@media(max-width:440px){.skills{grid-template-columns:1fr}}
+.ticks{list-style:none;padding:0;margin:20px 0 0;display:grid;gap:12px}
+.ticks li{position:relative;padding-left:32px;line-height:1.5}
+.ticks li::before{content:"";position:absolute;left:0;top:5px;width:20px;height:14px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#e2a873,#a5602f 50%,#5a2f15)}
+.obj{list-style:none;counter-reset:o;padding:0;margin:24px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:10px 24px}
+.obj li{counter-increment:o;display:flex;gap:14px;align-items:baseline;background:var(--bg);border-radius:16px;padding:14px 16px;font-weight:600;line-height:1.4}
+.obj li::before{content:counter(o,decimal-leading-zero);font:700 14px/1 "Bricolage Grotesque",sans-serif;color:var(--orange)}
+@media(max-width:700px){.obj{grid-template-columns:1fr}}
+.note{margin-top:20px;background:var(--butter);border-radius:18px;padding:16px 18px;font-weight:600}
 .js .rv{opacity:0;transform:translateY(22px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1)}.js .rv.in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){.js .rv{opacity:1;transform:none;transition:none}*{animation:none!important;scroll-behavior:auto!important}}
 .wa-float{position:fixed;right:18px;bottom:18px;z-index:60;width:58px;height:58px;border-radius:50%;background:#25d366;color:#fff;display:grid;place-items:center;box-shadow:0 12px 28px -8px rgba(37,211,102,.7);transition:transform .2s}
